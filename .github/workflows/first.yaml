@@ -1,22 +1,13 @@
-name: first
+name: Run 4 jobs
 
 on: push
 
 jobs:
-  job1:
-    name: First job
+  Job1:
     runs-on: ubuntu-latest
-    steps:
-    - name: Step one
-      uses: actions/checkout@v2
-    - name: Step two
-      run: env | sort
 
-  job2:
-    name: Second job
-    runs-on: windows-latest
-    steps: 
-    - name: Step one
-      uses: actions/checkout@v2
-    - name: Step two
-      run: "Get-ChildItem Env: | Sort-Object Name"
+    steps:
+      - name: Print ubuntu date
+      - uses: actions/checkout@v2
+      run: date "+%H:%M:%S   %d/%m/%y"
+
