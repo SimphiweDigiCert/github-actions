@@ -4,9 +4,20 @@ on: push
 
 jobs:
   Job1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print ubuntu date
-      - uses: actions/checkout@v2
-      run: date "+%H:%M:%S   %d/%m/%y"
+  runs-on: ubuntu-latest
+  steps:
+    - name: Print ubuntu date
+    - uses: actions/checkout@v2
+    run: date "+%H:%M:%S   %d/%m/%y"
+
+# jobs:
+#   build:
+#   name: Hello world
+#   runs-on: ubuntu-latest
+#   steps:
+#   - uses: actions/checkout@v2
+#   - name: Write a multi-line message
+#     run: |
+#       echo This demo file shows a 
+#       echo very basic and easy-to-understand workflow.
 
