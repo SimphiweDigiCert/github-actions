@@ -1,24 +1,22 @@
-name: Run 4 jobs
+name: Complex
 
 on: push
 
 jobs:
-  Job1:
-  runs-on: ubuntu-latest
-  steps:
-  - name: checking out
-    uses: actions/checkout@v2
-  - name: print date
-    run: date "+%H:%M:%S   %d/%m/%y"
-
-# jobs:
-#   build:
-#   name: Hello world
-#   runs-on: ubuntu-latest
-#   steps:
-#   - uses: actions/checkout@v2
-#   - name: Write a multi-line message
-#     run: |
-#       echo This demo file shows a 
-#       echo very basic and easy-to-understand workflow.
-
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+  windows:
+    runs-on: windows-latest
+    steps:
+    - run: date
+  macos:
+    runs-on: macos-latest
+    steps:
+    - run: date
+  depends:
+    needs: [ubuntu,windows,macos]
+    runs-on: macos-latest
+    steps:
+    - run: date
